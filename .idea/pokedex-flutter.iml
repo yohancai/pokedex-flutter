@@ -8,9 +8,9 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <excludeFolder url="file://$MODULE_DIR$/pokedex/.pub" />
-      <excludeFolder url="file://$MODULE_DIR$/pokedex/build" />
-      <excludeFolder url="file://$MODULE_DIR$/pokedex/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/Pokedex/build" />
+      <excludeFolder url="file://$MODULE_DIR$/Pokedex/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/Pokedex/.dart_tool" />
     </content>
     <orderEntry type="jdk" jdkName="Android API 30 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
