@@ -6,7 +6,8 @@ class Pokemon {
     this.name,
   );
   String name = "";
-  String type = "";
+  List<String> type = [];
+  String image = "";
 
   Pokemon.fromJson(Map<String, dynamic> json) {
     name = json['name'];

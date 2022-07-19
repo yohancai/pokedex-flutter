@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:pokedex/Specific_Pokemon.dart';
 import 'dart:convert' as convert;
 import 'package:pokedex/models/Pokemon.dart';
+import 'package:intl/intl.dart' show toBeginningOfSentenceCase;
 
 void main() {
   runApp(MyApp());
 }
 
 List<Pokemon> pokemon_list = [];
-List<String> pokemonImage_list = [];
 ScrollController _scrollController = ScrollController();
 int offset = 20;
 
@@ -51,154 +52,521 @@ class _MyAppState extends State<MyApp> {
               itemCount: pokemon_list.length,
               itemBuilder: (context, index) {
                 return Container(
-
-                  child: Column(
-                    children: <Widget>[
-                      Text(
-                        pokemon_list[index].name,
-                        style: Theme
-                            .of(context)
-                            .textTheme
-                            .headline5,
-                      ),
-                      if(pokemon_list[index].type == "fire") ... [
-                        Container(
-                          color: Colors.red,
-                          width: 100,
-                          height: 100,
-                          child: Image.network(pokemonImage_list[index]),
-                        ),
-                      ]
-                      else if(pokemon_list[index].type == "grass") ... [
-                        Container(
-                          color: Colors.lightGreen,
-                          width: 100,
-                          height: 100,
-                          child: Image.network(pokemonImage_list[index]),
-                        ),
-                      ]
-                      else if(pokemon_list[index].type == "water") ... [
+                  child: GestureDetector(
+                    child: Column(
+                      children: <Widget>[
+                        if(pokemon_list[index].type[0] == "fire") ... [
                           Container(
-                            color: Colors.blueAccent,
-                            width: 100,
-                            height: 100,
-                            child: Image.network(pokemonImage_list[index]),
-                          ),
-                        ]
-                      else if(pokemon_list[index].type == "normal") ... [
-                          Container(
-                            color: Colors.grey,
-                            width: 100,
-                            height: 100,
-                            child: Image.network(pokemonImage_list[index]),
-                          ),
-                        ]
-                      else if(pokemon_list[index].type == "flying") ... [
-                          Container(
-                            color: Colors.lightBlue,
-                            width: 100,
-                            height: 100,
-                            child: Image.network(pokemonImage_list[index]),
-                          ),
-                        ]
-                            else if(pokemon_list[index].type == "electric") ... [
-                                Container(
-                                  color: Colors.yellow,
-                                  width: 100,
-                                  height: 100,
-                                  child: Image.network(pokemonImage_list[index]),
+                            width: 160,
+                            height: 160,
+                            decoration: const BoxDecoration(
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(10),
+                                  topRight: Radius.circular(10),
+                                  bottomLeft: Radius.circular(10),
+                                  bottomRight: Radius.circular(10),
                                 ),
-                              ]
-                              else if(pokemon_list[index].type == "ground") ... [
+                                color: Color(0xfff08030),
+                            ),
+                            child: Column(
+                                children: [
+                                  SizedBox(height: 10),
+                                  Text(
+                                    pokemon_list[index].name,
+                                    style: Theme
+                                        .of(context)
+                                        .textTheme
+                                        .headline5,
+                                  ),
+                                  Image.network(pokemon_list[index].image),
+                                ]
+                            ),
+                          ),
+                        ]
+                        else if(pokemon_list[index].type[0] == "grass") ... [
+                          Container(
+                            width: 160,
+                            height: 160,
+                            decoration: const BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(10),
+                                topRight: Radius.circular(10),
+                                bottomLeft: Radius.circular(10),
+                                bottomRight: Radius.circular(10),
+                              ),
+                              color: Color(0xff78c850),
+                            ),
+                            child: Column(
+                                children: [
+                                  SizedBox(height: 10),
+                                  Text(
+                                    pokemon_list[index].name,
+                                    style: Theme
+                                        .of(context)
+                                        .textTheme
+                                        .headline5,
+                                  ),
+                                  Image.network(pokemon_list[index].image),
+                                ]
+                            ),
+                          ),
+                        ]
+                        else if(pokemon_list[index].type[0] == "water") ... [
+                            Container(
+                              width: 160,
+                              height: 160,
+                              decoration: const BoxDecoration(
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(10),
+                                  topRight: Radius.circular(10),
+                                  bottomLeft: Radius.circular(10),
+                                  bottomRight: Radius.circular(10),
+                                ),
+                                color: Color(0xff6890f0),
+                              ),
+                              child: Column(
+                                  children: [
+                                    SizedBox(height: 10),
+                                    Text(
+                                      pokemon_list[index].name,
+                                      style: Theme
+                                          .of(context)
+                                          .textTheme
+                                          .headline5,
+                                    ),
+                                    Image.network(pokemon_list[index].image),
+                                  ]
+                              ),
+                            ),
+                          ]
+                        else if(pokemon_list[index].type[0] == "normal") ... [
+                            Container(
+                              width: 160,
+                              height: 160,
+                              decoration: const BoxDecoration(
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(10),
+                                  topRight: Radius.circular(10),
+                                  bottomLeft: Radius.circular(10),
+                                  bottomRight: Radius.circular(10),
+                                ),
+                                color: Color(0xffa8a878),
+                              ),
+                              child: Column(
+                                  children: [
+                                    SizedBox(height: 10),
+                                    Text(
+                                      pokemon_list[index].name,
+                                      style: Theme
+                                          .of(context)
+                                          .textTheme
+                                          .headline5,
+                                    ),
+                                    Image.network(pokemon_list[index].image),
+                                  ]
+                              ),
+                            ),
+                          ]
+                        else if(pokemon_list[index].type[0] == "flying") ... [
+                            Container(
+                              width: 160,
+                              height: 160,
+                              decoration: const BoxDecoration(
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(10),
+                                  topRight: Radius.circular(10),
+                                  bottomLeft: Radius.circular(10),
+                                  bottomRight: Radius.circular(10),
+                                ),
+                                color: Color(0xffc03028),
+                              ),
+                              child: Column(
+                                  children: [
+                                    SizedBox(height: 10),
+                                    Text(
+                                      pokemon_list[index].name,
+                                      style: Theme
+                                          .of(context)
+                                          .textTheme
+                                          .headline5,
+                                    ),
+                                    Image.network(pokemon_list[index].image),
+                                  ]
+                              ),
+                            ),
+                          ]
+                              else if(pokemon_list[index].type[0] == "electric") ... [
                                   Container(
-                                    color: Colors.orangeAccent,
-                                    width: 100,
-                                    height: 100,
-                                    child: Image.network(pokemonImage_list[index]),
+                                    width: 160,
+                                    height: 160,
+                                    decoration: const BoxDecoration(
+                                      borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(10),
+                                        topRight: Radius.circular(10),
+                                        bottomLeft: Radius.circular(10),
+                                        bottomRight: Radius.circular(10),
+                                      ),
+                                      color: Color(0xfff8d030),
+                                    ),
+                                    child: Column(
+                                        children: [
+                                          SizedBox(height: 10),
+                                          Text(
+                                            pokemon_list[index].name,
+                                            style: Theme
+                                                .of(context)
+                                                .textTheme
+                                                .headline5,
+                                          ),
+                                          Image.network(pokemon_list[index].image),
+                                        ]
+                                    ),
                                   ),
                                 ]
-                                else if(pokemon_list[index].type == "fighting") ... [
+                                else if(pokemon_list[index].type[0] == "ground") ... [
                                     Container(
-                                      color: Colors.deepOrange,
-                                      width: 100,
-                                      height: 100,
-                                      child: Image.network(pokemonImage_list[index]),
+                                      width: 160,
+                                      height: 160,
+                                      decoration: const BoxDecoration(
+                                        borderRadius: BorderRadius.only(
+                                          topLeft: Radius.circular(10),
+                                          topRight: Radius.circular(10),
+                                          bottomLeft: Radius.circular(10),
+                                          bottomRight: Radius.circular(10),
+                                        ),
+                                        color: Color(0xffe0c068),
+                                      ),
+                                      child: Column(
+                                          children: [
+                                            SizedBox(height: 10),
+                                            Text(
+                                              pokemon_list[index].name,
+                                              style: Theme
+                                                  .of(context)
+                                                  .textTheme
+                                                  .headline5,
+                                            ),
+                                            Image.network(pokemon_list[index].image),
+                                          ]
+                                      ),
                                     ),
                                   ]
-                                  else if(pokemon_list[index].type == "psychic") ... [
+                                  else if(pokemon_list[index].type[0] == "fighting") ... [
                                       Container(
-                                        color: Colors.purpleAccent,
-                                        width: 100,
-                                        height: 100,
-                                        child: Image.network(pokemonImage_list[index]),
+                                        width: 160,
+                                        height: 160,
+                                        decoration: const BoxDecoration(
+                                          borderRadius: BorderRadius.only(
+                                            topLeft: Radius.circular(10),
+                                            topRight: Radius.circular(10),
+                                            bottomLeft: Radius.circular(10),
+                                            bottomRight: Radius.circular(10),
+                                          ),
+                                          color: Color(0xffc03028),
+                                        ),
+                                        child: Column(
+                                            children: [
+                                              SizedBox(height: 10),
+                                              Text(
+                                                pokemon_list[index].name,
+                                                style: Theme
+                                                    .of(context)
+                                                    .textTheme
+                                                    .headline5,
+                                              ),
+                                              Image.network(pokemon_list[index].image),
+                                            ]
+                                        ),
                                       ),
                                     ]
-                                    else if(pokemon_list[index].type == "rock") ... [
+                                    else if(pokemon_list[index].type[0] == "psychic") ... [
                                         Container(
-                                          color: Colors.brown,
-                                          width: 100,
-                                          height: 100,
-                                          child: Image.network(pokemonImage_list[index]),
+                                          width: 160,
+                                          height: 160,
+                                          decoration: const BoxDecoration(
+                                            borderRadius: BorderRadius.only(
+                                              topLeft: Radius.circular(10),
+                                              topRight: Radius.circular(10),
+                                              bottomLeft: Radius.circular(10),
+                                              bottomRight: Radius.circular(10),
+                                            ),
+                                            color: Color(0xfff85888),
+                                          ),
+                                          child: Column(
+                                              children: [
+                                                SizedBox(height: 10),
+                                                Text(
+                                                  pokemon_list[index].name,
+                                                  style: Theme
+                                                      .of(context)
+                                                      .textTheme
+                                                      .headline5,
+                                                ),
+                                                Image.network(pokemon_list[index].image),
+                                              ]
+                                          ),
                                         ),
                                       ]
-                                      else if(pokemon_list[index].type == "ice") ... [
+                                      else if(pokemon_list[index].type[0] == "rock") ... [
                                           Container(
-                                            color: Colors.blueGrey,
-                                            width: 100,
-                                            height: 100,
-                                            child: Image.network(pokemonImage_list[index]),
+                                            width: 160,
+                                            height: 160,
+                                            decoration: const BoxDecoration(
+                                              borderRadius: BorderRadius.only(
+                                                topLeft: Radius.circular(10),
+                                                topRight: Radius.circular(10),
+                                                bottomLeft: Radius.circular(10),
+                                                bottomRight: Radius.circular(10),
+                                              ),
+                                              color: Color(0xffb8a038),
+                                            ),
+                                            child: Column(
+                                                children: [
+                                                  SizedBox(height: 10),
+                                                  Text(
+                                                    pokemon_list[index].name,
+                                                    style: Theme
+                                                        .of(context)
+                                                        .textTheme
+                                                        .headline5,
+                                                  ),
+                                                  Image.network(pokemon_list[index].image),
+                                                ]
+                                            ),
                                           ),
                                         ]
-                                        else if(pokemon_list[index].type == "ghost") ... [
+                                        else if(pokemon_list[index].type[0] == "ice") ... [
                                             Container(
-                                              color: Colors.deepPurple,
-                                              width: 100,
-                                              height: 100,
-                                              child: Image.network(pokemonImage_list[index]),
+                                              width: 160,
+                                              height: 160,
+                                              decoration: const BoxDecoration(
+                                                borderRadius: BorderRadius.only(
+                                                  topLeft: Radius.circular(10),
+                                                  topRight: Radius.circular(10),
+                                                  bottomLeft: Radius.circular(10),
+                                                  bottomRight: Radius.circular(10),
+                                                ),
+                                                color: Color(0xff98d8d8),
+                                              ),
+                                              child: Column(
+                                                  children: [
+                                                    SizedBox(height: 10),
+                                                    Text(
+                                                      pokemon_list[index].name,
+                                                      style: Theme
+                                                          .of(context)
+                                                          .textTheme
+                                                          .headline5,
+                                                    ),
+                                                    Image.network(pokemon_list[index].image),
+                                                  ]
+                                              ),
                                             ),
                                           ]
-                                          else if(pokemon_list[index].type == "dragon") ... [
+                                          else if(pokemon_list[index].type[0] == "ghost") ... [
                                               Container(
-                                                color: Colors.deepPurpleAccent,
-                                                width: 100,
-                                                height: 100,
-                                                child: Image.network(pokemonImage_list[index]),
+                                                width: 160,
+                                                height: 160,
+                                                decoration: const BoxDecoration(
+                                                  borderRadius: BorderRadius.only(
+                                                    topLeft: Radius.circular(10),
+                                                    topRight: Radius.circular(10),
+                                                    bottomLeft: Radius.circular(10),
+                                                    bottomRight: Radius.circular(10),
+                                                  ),
+                                                  color: Color(0xff705898),
+                                                ),
+                                                child: Column(
+                                                    children: [
+                                                      SizedBox(height: 10),
+                                                      Text(
+                                                        pokemon_list[index].name,
+                                                        style: Theme
+                                                            .of(context)
+                                                            .textTheme
+                                                            .headline5,
+                                                      ),
+                                                      Image.network(pokemon_list[index].image),
+                                                    ]
+                                                ),
                                               ),
                                             ]
-                                            else if(pokemon_list[index].type == "dark") ... [
+                                            else if(pokemon_list[index].type[0] == "dragon") ... [
                                                 Container(
-                                                  color: Colors.black45,
-                                                  width: 100,
-                                                  height: 100,
-                                                  child: Image.network(pokemonImage_list[index]),
+                                                  width: 160,
+                                                  height: 160,
+                                                  decoration: const BoxDecoration(
+                                                    borderRadius: BorderRadius.only(
+                                                      topLeft: Radius.circular(10),
+                                                      topRight: Radius.circular(10),
+                                                      bottomLeft: Radius.circular(10),
+                                                      bottomRight: Radius.circular(10),
+                                                    ),
+                                                    color: Color(0xff7038f8),
+                                                  ),
+                                                  child: Column(
+                                                      children: [
+                                                        SizedBox(height: 10),
+                                                        Text(
+                                                          pokemon_list[index].name,
+                                                          style: Theme
+                                                              .of(context)
+                                                              .textTheme
+                                                              .headline5,
+                                                        ),
+                                                        Image.network(pokemon_list[index].image),
+                                                      ]
+                                                  ),
                                                 ),
                                               ]
-                                              else if(pokemon_list[index].type == "steel") ... [
+                                              else if(pokemon_list[index].type[0] == "dark") ... [
                                                   Container(
-                                                    color: Colors.blueGrey,
-                                                    width: 100,
-                                                    height: 100,
-                                                    child: Image.network(pokemonImage_list[index]),
+                                                    width: 160,
+                                                    height: 160,
+                                                    decoration: const BoxDecoration(
+                                                      borderRadius: BorderRadius.only(
+                                                        topLeft: Radius.circular(10),
+                                                        topRight: Radius.circular(10),
+                                                        bottomLeft: Radius.circular(10),
+                                                        bottomRight: Radius.circular(10),
+                                                      ),
+                                                      color: Color(0xffa4928e),
+                                                    ),
+                                                    child: Column(
+                                                        children: [
+                                                          SizedBox(height: 10),
+                                                          Text(
+                                                            pokemon_list[index].name,
+                                                            style: Theme
+                                                                .of(context)
+                                                                .textTheme
+                                                                .headline5,
+                                                          ),
+                                                          Image.network(pokemon_list[index].image),
+                                                        ]
+                                                    ),
                                                   ),
                                                 ]
-                                                else if(pokemon_list[index].type == "fairy") ... [
+                                                else if(pokemon_list[index].type[0] == "steel") ... [
                                                     Container(
-                                                      color: Colors.pink,
-                                                      width: 100,
-                                                      height: 100,
-                                                      child: Image.network(pokemonImage_list[index]),
+                                                      width: 160,
+                                                      height: 160,
+                                                      decoration: const BoxDecoration(
+                                                        borderRadius: BorderRadius.only(
+                                                          topLeft: Radius.circular(10),
+                                                          topRight: Radius.circular(10),
+                                                          bottomLeft: Radius.circular(10),
+                                                          bottomRight: Radius.circular(10),
+                                                        ),
+                                                        color: Color(0xfffdfcff),
+                                                      ),
+                                                      child: Column(
+                                                          children: [
+                                                            SizedBox(height: 10),
+                                                            Text(
+                                                              pokemon_list[index].name,
+                                                              style: Theme
+                                                                  .of(context)
+                                                                  .textTheme
+                                                                  .headline5,
+                                                            ),
+                                                            Image.network(pokemon_list[index].image),
+                                                          ]
+                                                      ),
                                                     ),
                                                   ]
-                      else ... [
-                        Container(
-                          color: Colors.brown,
-                          width: 100,
-                          height: 100,
-                          child: Image.network(pokemonImage_list[index]),
-                        ),
-                      ]
-
-                    ],
+                                                  else if(pokemon_list[index].type[0] == "fairy") ... [
+                                                      Container(
+                                                        width: 160,
+                                                        height: 160,
+                                                        decoration: const BoxDecoration(
+                                                          borderRadius: BorderRadius.only(
+                                                            topLeft: Radius.circular(10),
+                                                            topRight: Radius.circular(10),
+                                                            bottomLeft: Radius.circular(10),
+                                                            bottomRight: Radius.circular(10),
+                                                          ),
+                                                          color: Color(0xffee99ac),
+                                                        ),
+                                                        child: Column(
+                                                            children: [
+                                                              SizedBox(height: 10),
+                                                              Text(
+                                                                pokemon_list[index].name,
+                                                                style: Theme
+                                                                    .of(context)
+                                                                    .textTheme
+                                                                    .headline5,
+                                                              ),
+                                                              Image.network(pokemon_list[index].image),
+                                                            ]
+                                                        ),
+                                                      ),
+                                                    ]
+                                                    else if(pokemon_list[index].type[0] == "poison") ... [
+                                                        Container(
+                                                          width: 160,
+                                                          height: 160,
+                                                          decoration: const BoxDecoration(
+                                                            borderRadius: BorderRadius.only(
+                                                              topLeft: Radius.circular(10),
+                                                              topRight: Radius.circular(10),
+                                                              bottomLeft: Radius.circular(10),
+                                                              bottomRight: Radius.circular(10),
+                                                            ),
+                                                            color: Color(0xff97598e),
+                                                          ),
+                                                          child: Column(
+                                                              children: [
+                                                                SizedBox(height: 10),
+                                                                Text(
+                                                                  pokemon_list[index].name,
+                                                                  style: Theme
+                                                                      .of(context)
+                                                                      .textTheme
+                                                                      .headline5,
+                                                                ),
+                                                                Image.network(pokemon_list[index].image),
+                                                              ]
+                                                          ),
+                                                        ),
+                                                      ]
+                                                      else if(pokemon_list[index].type[0] == "bug") ... [
+                                                          Container(
+                                                            width: 160,
+                                                            height: 160,
+                                                            decoration: const BoxDecoration(
+                                                              borderRadius: BorderRadius.only(
+                                                                topLeft: Radius.circular(10),
+                                                                topRight: Radius.circular(10),
+                                                                bottomLeft: Radius.circular(10),
+                                                                bottomRight: Radius.circular(10),
+                                                              ),
+                                                              color: Color(0xffafb837),
+                                                            ),
+                                                            child: Column(
+                                                                children: [
+                                                                  SizedBox(height: 10),
+                                                                  Text(
+                                                                    pokemon_list[index].name,
+                                                                    style: Theme
+                                                                        .of(context)
+                                                                        .textTheme
+                                                                        .headline5,
+                                                                  ),
+                                                                  Image.network(pokemon_list[index].image),
+                                                                ]
+                                                            ),
+                                                          ),
+                                                        ]
+                      ],
+                    ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SpecificPokemon(pokemon: pokemon_list[index])),
+                      );
+                    },
                   ),
                 );
               },
@@ -207,14 +575,11 @@ class _MyAppState extends State<MyApp> {
               if (end is ScrollEndNotification) {
                 offset = offset + 20;
                 addPokemon(offset);
-                Future.delayed(const Duration(milliseconds: 5000), () {
-                  setState(() {
-                    print("setstate");
-                  });
-                });
+                setState(() {});
               }
               return true;
             },
+
           )
       ),
     );
@@ -222,11 +587,8 @@ class _MyAppState extends State<MyApp> {
 
   Future<List<Pokemon>> getPokemon(int offset) async {
     var pokemonurl;
-    pokemonImage_list.clear();
     pokemon_list.clear();
     for (int i = 1; i <= offset; i++) {
-      pokemonImage_list.add(
-          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/$i.png");
       pokemonurl = Uri.parse("https://pokeapi.co/api/v2/pokemon/$i/");
       var response = await http.get(
           pokemonurl
@@ -236,9 +598,14 @@ class _MyAppState extends State<MyApp> {
           final parsedJson = convert.jsonDecode(data);
           final pokemon = Pokemon.fromJson(parsedJson);
           final type = typeFromJson(data);
-          pokemon.type = type.types[0].type.name;
+          pokemon.name = toBeginningOfSentenceCase(pokemon.name).toString();
+          for(int j = 0; j < type.types.length; j++){
+            pokemon.type.add(type.types[j].type.name);
+          }
+          pokemon.image = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/$i.png";
           pokemon_list.add(pokemon);
           print("Added " + pokemon.name);
+          print(pokemon.type);
       }
       else {
         print("response status code is " + response.statusCode.toString());
@@ -249,8 +616,6 @@ class _MyAppState extends State<MyApp> {
   Future<List<Pokemon>> addPokemon(int offset) async {
     var url;
     for (int i = offset; i <= offset+20; i++) {
-      pokemonImage_list.add(
-          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/$i.png");
       url = Uri.parse("https://pokeapi.co/api/v2/pokemon/$i/");
       var response = await http.get(
           url
@@ -260,9 +625,14 @@ class _MyAppState extends State<MyApp> {
         final parsedJson = convert.jsonDecode(data);
         final pokemon = Pokemon.fromJson(parsedJson);
         final type = typeFromJson(data);
-        pokemon.type = type.types[0].type.name;
+        pokemon.name = toBeginningOfSentenceCase(pokemon.name).toString();
+        for(int j = 0; j < type.types.length; j++){
+          pokemon.type.add(type.types[j].type.name);
+        }
+        pokemon.image = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/$i.png";
         pokemon_list.add(pokemon);
         print("Added " + pokemon.name);
+        print(pokemon.type);
       }
       else {
         print("response status code is " + response.statusCode.toString());
