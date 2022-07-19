@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pokedex/models/Pokemon.dart';
+import 'package:pokedex/models/pokemon.dart';
 import 'package:intl/intl.dart' show toBeginningOfSentenceCase;
 
 class SpecificPokemon extends StatefulWidget {
@@ -19,11 +19,6 @@ class _SpecificPokemonState extends State<SpecificPokemon> {
   void initState() {
     pokemon = widget.pokemon;
     pokemon.name = toBeginningOfSentenceCase(pokemon.name).toString();
-    Future.delayed(const Duration(milliseconds: 1000), () {
-      setState(() {
-        print("setstate");
-      });
-    });
     super.initState();
   }
 
@@ -31,13 +26,13 @@ class _SpecificPokemonState extends State<SpecificPokemon> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(appBar: AppBar(
-        title: Text("Pokedex"),
+        title: const Text("Pokedex"),
       ),
           body: Center(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  Container(
+                  SizedBox(
                     width: 200,
                     height: 300,
                     child: Image.network(pokemon.image, fit: BoxFit.fill),
