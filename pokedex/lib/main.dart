@@ -57,8 +57,8 @@ class _MyAppState extends State<MyApp> {
                       children: <Widget>[
                         if(pokemon_list[index].type[0] == "fire") ... [
                           Container(
-                            width: 160,
-                            height: 160,
+                            width: 180,
+                            height: 180,
                             decoration: const BoxDecoration(
                                 borderRadius: BorderRadius.only(
                                   topLeft: Radius.circular(10),
@@ -78,15 +78,34 @@ class _MyAppState extends State<MyApp> {
                                         .textTheme
                                         .headline5,
                                   ),
-                                  Image.network(pokemon_list[index].image),
+                                  Row(
+                                      children: [
+                                        SizedBox(width: 15),
+                                        Column(
+                                          children: [
+                                            for(int i = 0; i < pokemon_list[index].type.length; i++)...[
+                                              Text(
+                                                toBeginningOfSentenceCase(pokemon_list[index].type[i]).toString(),
+                                                style: Theme
+                                                    .of(context)
+                                                    .textTheme
+                                                    .headline6,
+                                              )
+                                            ]
+                                          ],
+                                        ),
+                                        Image.network(pokemon_list[index].image),
+                                      ]
+
+                                  ),
                                 ]
                             ),
                           ),
                         ]
                         else if(pokemon_list[index].type[0] == "grass") ... [
                           Container(
-                            width: 160,
-                            height: 160,
+                            width: 180,
+                            height: 180,
                             decoration: const BoxDecoration(
                               borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(10),
@@ -106,15 +125,34 @@ class _MyAppState extends State<MyApp> {
                                         .textTheme
                                         .headline5,
                                   ),
-                                  Image.network(pokemon_list[index].image),
+                                  Row(
+                                      children: [
+                                        SizedBox(width: 15),
+                                        Column(
+                                          children: [
+                                            for(int i = 0; i < pokemon_list[index].type.length; i++)...[
+                                              Text(
+                                                toBeginningOfSentenceCase(pokemon_list[index].type[i]).toString(),
+                                                style: Theme
+                                                    .of(context)
+                                                    .textTheme
+                                                    .headline6,
+                                              )
+                                            ]
+                                          ],
+                                        ),
+                                        Image.network(pokemon_list[index].image),
+                                      ]
+
+                                  ),
                                 ]
                             ),
                           ),
                         ]
                         else if(pokemon_list[index].type[0] == "water") ... [
                             Container(
-                              width: 160,
-                              height: 160,
+                              width: 180,
+                              height: 180,
                               decoration: const BoxDecoration(
                                 borderRadius: BorderRadius.only(
                                   topLeft: Radius.circular(10),
@@ -134,15 +172,34 @@ class _MyAppState extends State<MyApp> {
                                           .textTheme
                                           .headline5,
                                     ),
-                                    Image.network(pokemon_list[index].image),
+                                    Row(
+                                        children: [
+                                          SizedBox(width: 15),
+                                          Column(
+                                            children: [
+                                              for(int i = 0; i < pokemon_list[index].type.length; i++)...[
+                                                Text(
+                                                  toBeginningOfSentenceCase(pokemon_list[index].type[i]).toString(),
+                                                  style: Theme
+                                                      .of(context)
+                                                      .textTheme
+                                                      .headline6,
+                                                )
+                                              ]
+                                            ],
+                                          ),
+                                          Image.network(pokemon_list[index].image),
+                                        ]
+
+                                    ),
                                   ]
                               ),
                             ),
                           ]
                         else if(pokemon_list[index].type[0] == "normal") ... [
                             Container(
-                              width: 160,
-                              height: 160,
+                              width: 180,
+                              height: 180,
                               decoration: const BoxDecoration(
                                 borderRadius: BorderRadius.only(
                                   topLeft: Radius.circular(10),
@@ -162,15 +219,34 @@ class _MyAppState extends State<MyApp> {
                                           .textTheme
                                           .headline5,
                                     ),
-                                    Image.network(pokemon_list[index].image),
+                                    Row(
+                                        children: [
+                                          SizedBox(width: 15),
+                                          Column(
+                                            children: [
+                                              for(int i = 0; i < pokemon_list[index].type.length; i++)...[
+                                                Text(
+                                                  toBeginningOfSentenceCase(pokemon_list[index].type[i]).toString(),
+                                                  style: Theme
+                                                      .of(context)
+                                                      .textTheme
+                                                      .headline6,
+                                                )
+                                              ]
+                                            ],
+                                          ),
+                                          Image.network(pokemon_list[index].image),
+                                        ]
+
+                                    ),
                                   ]
                               ),
                             ),
                           ]
                         else if(pokemon_list[index].type[0] == "flying") ... [
                             Container(
-                              width: 160,
-                              height: 160,
+                              width: 180,
+                              height: 180,
                               decoration: const BoxDecoration(
                                 borderRadius: BorderRadius.only(
                                   topLeft: Radius.circular(10),
@@ -190,15 +266,34 @@ class _MyAppState extends State<MyApp> {
                                           .textTheme
                                           .headline5,
                                     ),
-                                    Image.network(pokemon_list[index].image),
+                                    Row(
+                                        children: [
+                                          SizedBox(width: 15),
+                                          Column(
+                                            children: [
+                                              for(int i = 0; i < pokemon_list[index].type.length; i++)...[
+                                                Text(
+                                                  toBeginningOfSentenceCase(pokemon_list[index].type[i]).toString(),
+                                                  style: Theme
+                                                      .of(context)
+                                                      .textTheme
+                                                      .headline6,
+                                                )
+                                              ]
+                                            ],
+                                          ),
+                                          Image.network(pokemon_list[index].image),
+                                        ]
+
+                                    ),
                                   ]
                               ),
                             ),
                           ]
                               else if(pokemon_list[index].type[0] == "electric") ... [
                                   Container(
-                                    width: 160,
-                                    height: 160,
+                                    width: 180,
+                                    height: 180,
                                     decoration: const BoxDecoration(
                                       borderRadius: BorderRadius.only(
                                         topLeft: Radius.circular(10),
@@ -218,15 +313,34 @@ class _MyAppState extends State<MyApp> {
                                                 .textTheme
                                                 .headline5,
                                           ),
-                                          Image.network(pokemon_list[index].image),
+                                          Row(
+                                              children: [
+                                                SizedBox(width: 15),
+                                                Column(
+                                                  children: [
+                                                    for(int i = 0; i < pokemon_list[index].type.length; i++)...[
+                                                      Text(
+                                                        toBeginningOfSentenceCase(pokemon_list[index].type[i]).toString(),
+                                                        style: Theme
+                                                            .of(context)
+                                                            .textTheme
+                                                            .headline6,
+                                                      )
+                                                    ]
+                                                  ],
+                                                ),
+                                                Image.network(pokemon_list[index].image),
+                                              ]
+
+                                          ),
                                         ]
                                     ),
                                   ),
                                 ]
                                 else if(pokemon_list[index].type[0] == "ground") ... [
                                     Container(
-                                      width: 160,
-                                      height: 160,
+                                      width: 180,
+                                      height: 180,
                                       decoration: const BoxDecoration(
                                         borderRadius: BorderRadius.only(
                                           topLeft: Radius.circular(10),
@@ -246,15 +360,34 @@ class _MyAppState extends State<MyApp> {
                                                   .textTheme
                                                   .headline5,
                                             ),
-                                            Image.network(pokemon_list[index].image),
+                                            Row(
+                                                children: [
+                                                  SizedBox(width: 15),
+                                                  Column(
+                                                    children: [
+                                                      for(int i = 0; i < pokemon_list[index].type.length; i++)...[
+                                                        Text(
+                                                          toBeginningOfSentenceCase(pokemon_list[index].type[i]).toString(),
+                                                          style: Theme
+                                                              .of(context)
+                                                              .textTheme
+                                                              .headline6,
+                                                        )
+                                                      ]
+                                                    ],
+                                                  ),
+                                                  Image.network(pokemon_list[index].image),
+                                                ]
+
+                                            ),
                                           ]
                                       ),
                                     ),
                                   ]
                                   else if(pokemon_list[index].type[0] == "fighting") ... [
                                       Container(
-                                        width: 160,
-                                        height: 160,
+                                        width: 180,
+                                        height: 180,
                                         decoration: const BoxDecoration(
                                           borderRadius: BorderRadius.only(
                                             topLeft: Radius.circular(10),
@@ -274,15 +407,34 @@ class _MyAppState extends State<MyApp> {
                                                     .textTheme
                                                     .headline5,
                                               ),
-                                              Image.network(pokemon_list[index].image),
+                                              Row(
+                                                  children: [
+                                                    SizedBox(height: 10),
+                                                    Column(
+                                                      children: [
+                                                        for(int i = 0; i < pokemon_list[index].type.length; i++)...[
+                                                          Text(
+                                                            toBeginningOfSentenceCase(pokemon_list[index].type[i]).toString(),
+                                                            style: Theme
+                                                                .of(context)
+                                                                .textTheme
+                                                                .headline6,
+                                                          )
+                                                        ]
+                                                      ],
+                                                    ),
+                                                    Image.network(pokemon_list[index].image),
+                                                  ]
+
+                                              ),
                                             ]
                                         ),
                                       ),
                                     ]
                                     else if(pokemon_list[index].type[0] == "psychic") ... [
                                         Container(
-                                          width: 160,
-                                          height: 160,
+                                          width: 180,
+                                          height: 180,
                                           decoration: const BoxDecoration(
                                             borderRadius: BorderRadius.only(
                                               topLeft: Radius.circular(10),
@@ -302,15 +454,34 @@ class _MyAppState extends State<MyApp> {
                                                       .textTheme
                                                       .headline5,
                                                 ),
-                                                Image.network(pokemon_list[index].image),
+                                                Row(
+                                                    children: [
+                                                      SizedBox(height: 5),
+                                                      Column(
+                                                        children: [
+                                                          for(int i = 0; i < pokemon_list[index].type.length; i++)...[
+                                                            Text(
+                                                              toBeginningOfSentenceCase(pokemon_list[index].type[i]).toString(),
+                                                              style: Theme
+                                                                  .of(context)
+                                                                  .textTheme
+                                                                  .headline6,
+                                                            )
+                                                          ]
+                                                        ],
+                                                      ),
+                                                      Image.network(pokemon_list[index].image),
+                                                    ]
+
+                                                ),
                                               ]
                                           ),
                                         ),
                                       ]
                                       else if(pokemon_list[index].type[0] == "rock") ... [
                                           Container(
-                                            width: 160,
-                                            height: 160,
+                                            width: 180,
+                                            height: 180,
                                             decoration: const BoxDecoration(
                                               borderRadius: BorderRadius.only(
                                                 topLeft: Radius.circular(10),
@@ -330,15 +501,34 @@ class _MyAppState extends State<MyApp> {
                                                         .textTheme
                                                         .headline5,
                                                   ),
-                                                  Image.network(pokemon_list[index].image),
+                                                  Row(
+                                                      children: [
+                                                        SizedBox(width: 15),
+                                                        Column(
+                                                          children: [
+                                                            for(int i = 0; i < pokemon_list[index].type.length; i++)...[
+                                                              Text(
+                                                                toBeginningOfSentenceCase(pokemon_list[index].type[i]).toString(),
+                                                                style: Theme
+                                                                    .of(context)
+                                                                    .textTheme
+                                                                    .headline6,
+                                                              )
+                                                            ]
+                                                          ],
+                                                        ),
+                                                        Image.network(pokemon_list[index].image),
+                                                      ]
+
+                                                  ),
                                                 ]
                                             ),
                                           ),
                                         ]
                                         else if(pokemon_list[index].type[0] == "ice") ... [
                                             Container(
-                                              width: 160,
-                                              height: 160,
+                                              width: 180,
+                                              height: 180,
                                               decoration: const BoxDecoration(
                                                 borderRadius: BorderRadius.only(
                                                   topLeft: Radius.circular(10),
@@ -358,15 +548,34 @@ class _MyAppState extends State<MyApp> {
                                                           .textTheme
                                                           .headline5,
                                                     ),
-                                                    Image.network(pokemon_list[index].image),
+                                                    Row(
+                                                        children: [
+                                                          SizedBox(width: 15),
+                                                          Column(
+                                                            children: [
+                                                              for(int i = 0; i < pokemon_list[index].type.length; i++)...[
+                                                                Text(
+                                                                  toBeginningOfSentenceCase(pokemon_list[index].type[i]).toString(),
+                                                                  style: Theme
+                                                                      .of(context)
+                                                                      .textTheme
+                                                                      .headline6,
+                                                                )
+                                                              ]
+                                                            ],
+                                                          ),
+                                                          Image.network(pokemon_list[index].image),
+                                                        ]
+
+                                                    ),
                                                   ]
                                               ),
                                             ),
                                           ]
                                           else if(pokemon_list[index].type[0] == "ghost") ... [
                                               Container(
-                                                width: 160,
-                                                height: 160,
+                                                width: 180,
+                                                height: 180,
                                                 decoration: const BoxDecoration(
                                                   borderRadius: BorderRadius.only(
                                                     topLeft: Radius.circular(10),
@@ -386,15 +595,34 @@ class _MyAppState extends State<MyApp> {
                                                             .textTheme
                                                             .headline5,
                                                       ),
-                                                      Image.network(pokemon_list[index].image),
+                                                      Row(
+                                                          children: [
+                                                            SizedBox(width: 15),
+                                                            Column(
+                                                              children: [
+                                                                for(int i = 0; i < pokemon_list[index].type.length; i++)...[
+                                                                  Text(
+                                                                    toBeginningOfSentenceCase(pokemon_list[index].type[i]).toString(),
+                                                                    style: Theme
+                                                                        .of(context)
+                                                                        .textTheme
+                                                                        .headline6,
+                                                                  )
+                                                                ]
+                                                              ],
+                                                            ),
+                                                            Image.network(pokemon_list[index].image),
+                                                          ]
+
+                                                      ),
                                                     ]
                                                 ),
                                               ),
                                             ]
                                             else if(pokemon_list[index].type[0] == "dragon") ... [
                                                 Container(
-                                                  width: 160,
-                                                  height: 160,
+                                                  width: 180,
+                                                  height: 180,
                                                   decoration: const BoxDecoration(
                                                     borderRadius: BorderRadius.only(
                                                       topLeft: Radius.circular(10),
@@ -414,15 +642,34 @@ class _MyAppState extends State<MyApp> {
                                                               .textTheme
                                                               .headline5,
                                                         ),
-                                                        Image.network(pokemon_list[index].image),
+                                                        Row(
+                                                            children: [
+                                                              SizedBox(width: 15),
+                                                              Column(
+                                                                children: [
+                                                                  for(int i = 0; i < pokemon_list[index].type.length; i++)...[
+                                                                    Text(
+                                                                      toBeginningOfSentenceCase(pokemon_list[index].type[i]).toString(),
+                                                                      style: Theme
+                                                                          .of(context)
+                                                                          .textTheme
+                                                                          .headline6,
+                                                                    )
+                                                                  ]
+                                                                ],
+                                                              ),
+                                                              Image.network(pokemon_list[index].image),
+                                                            ]
+
+                                                        ),
                                                       ]
                                                   ),
                                                 ),
                                               ]
                                               else if(pokemon_list[index].type[0] == "dark") ... [
                                                   Container(
-                                                    width: 160,
-                                                    height: 160,
+                                                    width: 180,
+                                                    height: 180,
                                                     decoration: const BoxDecoration(
                                                       borderRadius: BorderRadius.only(
                                                         topLeft: Radius.circular(10),
@@ -442,15 +689,34 @@ class _MyAppState extends State<MyApp> {
                                                                 .textTheme
                                                                 .headline5,
                                                           ),
-                                                          Image.network(pokemon_list[index].image),
+                                                          Row(
+                                                              children: [
+                                                                SizedBox(width: 15),
+                                                                Column(
+                                                                  children: [
+                                                                    for(int i = 0; i < pokemon_list[index].type.length; i++)...[
+                                                                      Text(
+                                                                        toBeginningOfSentenceCase(pokemon_list[index].type[i]).toString(),
+                                                                        style: Theme
+                                                                            .of(context)
+                                                                            .textTheme
+                                                                            .headline6,
+                                                                      )
+                                                                    ]
+                                                                  ],
+                                                                ),
+                                                                Image.network(pokemon_list[index].image),
+                                                              ]
+
+                                                          ),
                                                         ]
                                                     ),
                                                   ),
                                                 ]
                                                 else if(pokemon_list[index].type[0] == "steel") ... [
                                                     Container(
-                                                      width: 160,
-                                                      height: 160,
+                                                      width: 180,
+                                                      height: 180,
                                                       decoration: const BoxDecoration(
                                                         borderRadius: BorderRadius.only(
                                                           topLeft: Radius.circular(10),
@@ -458,7 +724,7 @@ class _MyAppState extends State<MyApp> {
                                                           bottomLeft: Radius.circular(10),
                                                           bottomRight: Radius.circular(10),
                                                         ),
-                                                        color: Color(0xfffdfcff),
+                                                        color: Color(0xffb8b8d0),
                                                       ),
                                                       child: Column(
                                                           children: [
@@ -470,15 +736,34 @@ class _MyAppState extends State<MyApp> {
                                                                   .textTheme
                                                                   .headline5,
                                                             ),
-                                                            Image.network(pokemon_list[index].image),
+                                                            Row(
+                                                                children: [
+                                                                  SizedBox(width: 15),
+                                                                  Column(
+                                                                    children: [
+                                                                      for(int i = 0; i < pokemon_list[index].type.length; i++)...[
+                                                                        Text(
+                                                                          toBeginningOfSentenceCase(pokemon_list[index].type[i]).toString(),
+                                                                          style: Theme
+                                                                              .of(context)
+                                                                              .textTheme
+                                                                              .headline6,
+                                                                        )
+                                                                      ]
+                                                                    ],
+                                                                  ),
+                                                                  Image.network(pokemon_list[index].image),
+                                                                ]
+
+                                                            ),
                                                           ]
                                                       ),
                                                     ),
                                                   ]
                                                   else if(pokemon_list[index].type[0] == "fairy") ... [
                                                       Container(
-                                                        width: 160,
-                                                        height: 160,
+                                                        width: 180,
+                                                        height: 180,
                                                         decoration: const BoxDecoration(
                                                           borderRadius: BorderRadius.only(
                                                             topLeft: Radius.circular(10),
@@ -498,15 +783,34 @@ class _MyAppState extends State<MyApp> {
                                                                     .textTheme
                                                                     .headline5,
                                                               ),
-                                                              Image.network(pokemon_list[index].image),
+                                                              Row(
+                                                                  children: [
+                                                                    SizedBox(width: 15),
+                                                                    Column(
+                                                                      children: [
+                                                                        for(int i = 0; i < pokemon_list[index].type.length; i++)...[
+                                                                          Text(
+                                                                            toBeginningOfSentenceCase(pokemon_list[index].type[i]).toString(),
+                                                                            style: Theme
+                                                                                .of(context)
+                                                                                .textTheme
+                                                                                .headline6,
+                                                                          )
+                                                                        ]
+                                                                      ],
+                                                                    ),
+                                                                    Image.network(pokemon_list[index].image),
+                                                                  ]
+
+                                                              ),
                                                             ]
                                                         ),
                                                       ),
                                                     ]
                                                     else if(pokemon_list[index].type[0] == "poison") ... [
                                                         Container(
-                                                          width: 160,
-                                                          height: 160,
+                                                          width: 180,
+                                                          height: 180,
                                                           decoration: const BoxDecoration(
                                                             borderRadius: BorderRadius.only(
                                                               topLeft: Radius.circular(10),
@@ -526,15 +830,34 @@ class _MyAppState extends State<MyApp> {
                                                                       .textTheme
                                                                       .headline5,
                                                                 ),
-                                                                Image.network(pokemon_list[index].image),
+                                                                Row(
+                                                                    children: [
+                                                                      SizedBox(width: 15),
+                                                                      Column(
+                                                                        children: [
+                                                                          for(int i = 0; i < pokemon_list[index].type.length; i++)...[
+                                                                            Text(
+                                                                              toBeginningOfSentenceCase(pokemon_list[index].type[i]).toString(),
+                                                                              style: Theme
+                                                                                  .of(context)
+                                                                                  .textTheme
+                                                                                  .headline6,
+                                                                            )
+                                                                          ]
+                                                                        ],
+                                                                      ),
+                                                                      Image.network(pokemon_list[index].image),
+                                                                    ]
+
+                                                                ),
                                                               ]
                                                           ),
                                                         ),
                                                       ]
                                                       else if(pokemon_list[index].type[0] == "bug") ... [
                                                           Container(
-                                                            width: 160,
-                                                            height: 160,
+                                                            width: 180,
+                                                            height: 180,
                                                             decoration: const BoxDecoration(
                                                               borderRadius: BorderRadius.only(
                                                                 topLeft: Radius.circular(10),
@@ -554,7 +877,26 @@ class _MyAppState extends State<MyApp> {
                                                                         .textTheme
                                                                         .headline5,
                                                                   ),
-                                                                  Image.network(pokemon_list[index].image),
+                                                                  Row(
+                                                                      children: [
+                                                                        SizedBox(width: 15),
+                                                                        Column(
+                                                                          children: [
+                                                                            for(int i = 0; i < pokemon_list[index].type.length; i++)...[
+                                                                              Text(
+                                                                                toBeginningOfSentenceCase(pokemon_list[index].type[i]).toString(),
+                                                                                style: Theme
+                                                                                    .of(context)
+                                                                                    .textTheme
+                                                                                    .headline6,
+                                                                              )
+                                                                            ]
+                                                                          ],
+                                                                        ),
+                                                                        Image.network(pokemon_list[index].image),
+                                                                      ]
+
+                                                                  ),
                                                                 ]
                                                             ),
                                                           ),
